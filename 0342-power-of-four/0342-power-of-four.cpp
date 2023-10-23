@@ -4,7 +4,9 @@ public:
         if(n<=0){
             return false;
         }
-        int ans=log(n)/log(4);
-        return pow(4,ans)==n;
+        if((n&(n-1))==0 && (n-1)%3==0){
+            return true;
+        }
+        return false;
     }
 };
