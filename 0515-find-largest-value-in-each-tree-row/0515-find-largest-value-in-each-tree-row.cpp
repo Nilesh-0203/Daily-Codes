@@ -22,13 +22,13 @@ public:
 
         while(!q.empty()){
             int n=q.size();
-            vector<int>ans;
+            int ans=INT_MIN;
             for(int i=0;i<n;i++){
                 TreeNode* front=q.front();
                 q.pop();
-
-                ans.push_back(front->val);
-
+                if(ans<front->val){
+                    ans=front->val;
+                }
                 if(front->left){
                     q.push(front->left);
                 }
@@ -36,8 +36,7 @@ public:
                     q.push(front->right);
                 }
             }
-            int maxi=*max_element(ans.begin(),ans.end());
-            v.push_back(maxi);
+            v.push_back(ans);
         }
         return v;
     }
