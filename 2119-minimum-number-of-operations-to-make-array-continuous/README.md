@@ -1,6 +1,6 @@
 <h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous/">2119. Minimum Number of Operations to Make Array Continuous</a></h2><h3>Hard</h3><hr><p>You are given an integer array <code>nums</code>. In one operation, you can replace <strong>any</strong> element in <code>nums</code> with <strong>any</strong> integer.</p>
 
-<p><code>nums</code> is considered <strong>continuous</strong> if both of the following conditions are fulfilled:</p>
+<p><code>nums</code> is considered <strong>continuous</strong> if both of the following conditions are fulfilled:</p> 
 
 <ul>
 	<li>All elements in <code>nums</code> are <strong>unique</strong>.</li>
