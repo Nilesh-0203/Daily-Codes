@@ -42,7 +42,7 @@ class Solution
     bool isIdentical(Node *r1, Node *r2)
     {
         //Your Code here
-        if(r1==NULL && r2==NULL){
+         if(r1==NULL && r2==NULL){
             return true;
         }
         
