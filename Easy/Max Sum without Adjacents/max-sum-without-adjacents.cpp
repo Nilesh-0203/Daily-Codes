@@ -12,8 +12,8 @@ public:
 	int findMaxSum(int *arr, int n) {
 	    // code here
 	    if(n==1)
-         return arr[0];
-
+        return arr[0];
+        
         int sum1=arr[0],sum2=max(arr[0],arr[1]);
         
         for(int i=2;i<n;i++)
