@@ -12,31 +12,12 @@ class Solution
 {
     public:
     //Function to find the first position with different bits.
-    void decToBinary(int n,vector<int>&v) 
-    { 
-    // Size of an integer is assumed to be 32 bits 
-      for (int i = 31; i >= 0; i--) { 
-        int k = n >> i; 
-        if (k & 1) 
-            v.push_back(1);
-        else
-            v.push_back(0);
-        } 
-    } 
     int posOfRightMostDiffBit(int m, int n)
     {
         // Your code here
-        vector<int>v1,v2;
-        decToBinary(m,v1);
-        decToBinary(n,v2);
-        
-        int a=v1.size();
-        int b=v2.size();
-        
-        for(int i=max(a,b) - 1;i>=0;i--){
-            if(v1[i]!=v2[i]){
-                return 32-i;
-            }
+        for(int i=0; i<32; i++){
+            int mask=(1<<i);
+            if((mask&m)!=(mask&n)) return i+1;
         }
         return -1;
     }
