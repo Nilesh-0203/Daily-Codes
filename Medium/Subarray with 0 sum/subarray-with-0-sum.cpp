@@ -14,11 +14,11 @@ class Solution{
     bool subArrayExists(int arr[], int n)
     {
         //Your code here
-         for(int i=0;i<n;i++){
-            int sum =0;
+        for(int i=0;i<n;i++){
+            int sum=0;
             for(int j=i;j<n;j++){
-                sum += arr[j];
-                if(sum == 0){
+                sum+=arr[j];
+                if(sum==0){
                     return true;
                 }
             }
