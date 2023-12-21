@@ -8,7 +8,7 @@ class Solution {
   public:
     int minCandy(int N, vector<int> &ratings) {
         // code here
-        int ans = N,i=1;
+          int ans = N,i=1;
         
         while(i<N){
             
