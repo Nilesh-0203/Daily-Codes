@@ -35,7 +35,7 @@ class Solution {
             else l=mid+1;
             }
             return ans;
-    }
+        }
 };
 
 //{ Driver Code Starts.
