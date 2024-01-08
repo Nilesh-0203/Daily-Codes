@@ -44,7 +44,7 @@ class Solution
 {
     public:
     
-    Node* reverse(Node* head){
+     Node* reverse(Node* head){
         Node* curr=head;
         Node* next=NULL;
         Node* prev=NULL;
@@ -114,7 +114,7 @@ class Solution
             temp=reverse(temp);
             return temp;
         }
-    }  
+    }   
 };
 
 
