@@ -7,16 +7,11 @@ using namespace std;
 class Solution
 {
     public:
-        vector <int> search(string pat, string txt)
+        vector <int> search(string p, string t)
         {
-            //code here
-            int n=pat.size(),m=txt.size();
+            int n=p.size(),m=t.size();
             vector<int>v;
-            for(int i=0;i<m;i++){
-                if(txt[i]==pat[0] and pat==txt.substr(i,n)){
-                    v.push_back(i+1);
-                } 
-            } 
+            for(int i=0;i<m;i++) if(t[i]==p[0] and p==t.substr(i,n)) v.push_back(i+1);
             return v;
         }
      
