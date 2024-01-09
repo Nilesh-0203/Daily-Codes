@@ -10,11 +10,20 @@ using namespace std;
 class Solution
 {
    public:
+    
     int findSum(int A[], int N)
     {
     	//code here.
-    	sort(A,A+N);
-    	return A[0]+A[N-1];
+    	int maxi=A[0],mini=A[0];
+    	for(int i=0;i<N;i++){
+    	    if(maxi>A[i]){
+    	        maxi=A[i];
+    	    }
+    	    if(mini<A[i]){
+    	        mini=A[i];
+    	    }
+    	}
+    	return maxi+mini;
     }
 
 };
