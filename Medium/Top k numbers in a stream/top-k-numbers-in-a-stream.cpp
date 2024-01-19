@@ -32,8 +32,7 @@ public:
 class Solution {
   public:
     vector<vector<int>> kTop(vector<int>& arr, int N, int K) {
-        // code here
-        vector<vector<int>> ans;
+    vector<vector<int>> ans;
     vector<int> top(K + 1, 0);
     unordered_map<int, int> mp;
 
@@ -58,8 +57,7 @@ class Solution {
         ans.push_back(temp);
     }
 
-    return ans;
-    }
+    return ans;}
 };
 
 
