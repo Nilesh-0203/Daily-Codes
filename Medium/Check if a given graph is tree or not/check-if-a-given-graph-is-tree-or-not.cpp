@@ -36,7 +36,7 @@ public:
 // } Driver Code Ends
 class Solution {
   public:
-        bool isCycle(int node, int par, vector<bool> &visited, vector<int> parents, const vector<vector<int>> &adj)
+     bool isCycle(int node, int par, vector<bool> &visited, vector<int> parents, const vector<vector<int>> &adj)
     {
         visited[node] = true;
     
