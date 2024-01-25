@@ -5,7 +5,7 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
-#define N 10002 
+#define N 10002
 class Solution{   
 public:
     bool p[N];
