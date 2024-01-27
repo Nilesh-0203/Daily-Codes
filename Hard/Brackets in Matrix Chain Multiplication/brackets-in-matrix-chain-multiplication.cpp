@@ -7,7 +7,7 @@ using namespace std;
 // User function Template for C++
 class Solution{
 public:
-   string matrixChainOrder(int arr[],int N) {
+    string matrixChainOrder(int arr[],int N) {
         vector<vector<int>> dp(N, vector<int>(N, 0));
 
         for (int i = 0; i < N; i++) {
