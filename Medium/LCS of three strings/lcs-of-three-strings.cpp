@@ -7,7 +7,8 @@ using namespace std;
 class Solution
 {
     public:
-        int N1,N2,N3;
+
+       int N1,N2,N3;
         int t[21][21][21];
         int solve(string &A,string &B,string &C,int i,int j,int k){
             if(i>=N1 || j>=N2 || k>=N3){
