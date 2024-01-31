@@ -56,7 +56,7 @@ class Solution
 {
     public:
         //Function to insert string into TRIE.
-        TrieNode* getNode(){
+       TrieNode* getNode(){
             TrieNode* newNode=new TrieNode();
             newNode->isLeaf=false;
             
