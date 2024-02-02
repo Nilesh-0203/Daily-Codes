@@ -10,7 +10,6 @@ using namespace std;
 class Solution{
   public:
     /*You are required to complete this method */
-    
     int atoi(string s) {
         //Your code here
         int ans=0;
