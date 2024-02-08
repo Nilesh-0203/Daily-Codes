@@ -97,7 +97,7 @@ struct Node
 */
 
 class Solution{
-    int maxi,mini;
+   int maxi,mini;
     void checkHeight(Node* root, int i){
         if(!root) return;
         if(!root->left && !root->right){
