@@ -11,7 +11,7 @@ class Solution{
 public:
     vector<int> recamanSequence(int n){
         // code here
-        unordered_set<int>st;
+         unordered_set<int>st;
         vector<int>v(n+1);
         v[0]=0;
         st.insert(0);
