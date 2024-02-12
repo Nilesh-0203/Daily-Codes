@@ -12,7 +12,7 @@ public:
     long long mod=1e9+7;
     long long sequence(int n){
         // code here
-        long long ans=1;
+        long long ans=0;
         long long k=1;
         for(int i=1;i<=n;i++){
             int count=0;
@@ -24,7 +24,7 @@ public:
             }
             ans=(ans+a)%mod;
         }
-        return ans-1;
+        return ans;
     }
 };
 
