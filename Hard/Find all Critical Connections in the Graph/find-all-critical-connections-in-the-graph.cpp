@@ -8,7 +8,7 @@ using namespace std;
 
 class Solution {
 public:
-  int dfs(vector<int> graph[], int i, vector<int>& rank, vector<vector<int>>& res, int prev_rank, int n) {
+	  int dfs(vector<int> graph[], int i, vector<int>& rank, vector<vector<int>>& res, int prev_rank, int n) {
         rank[i] = prev_rank + 1;
         int t = INT_MAX;
         for(const auto& nbr: graph[i]) {
