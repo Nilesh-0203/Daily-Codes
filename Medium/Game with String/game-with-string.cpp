@@ -9,25 +9,31 @@ using namespace std;
 
 class Solution{
 public:
+    
     int minValue(string s, int k){
         // code here
-        map<int,int>mp;
+        priority_queue<int>maxHeap;
+        map<char,int>mp;
         for(int i=0;i<s.length();i++){
             mp[s[i]]++;
         }
-        vector<int>v;
         for(auto i:mp){
-            v.push_back(i.second);
+            maxHeap.push(i.second);
         }
-        int n=v.size()-1;
         while(k!=0){
-            sort(v.begin(),v.end());
-            v[n]=v[n]-1;
+            int rootElement=maxHeap.top();
+            maxHeap.pop();
+            rootElement--;
+            maxHeap.push(rootElement);
             k--;
         }
+        
         int sum=0;
-        for(int i=0;i<n+1;i++){
-            sum+=(v[i]*v[i]);
+        while(!maxHeap.empty()){
+            int rootElement=maxHeap.top();
+            maxHeap.pop();
+            
+            sum+=(rootElement*rootElement);
         }
         return sum;
     }
