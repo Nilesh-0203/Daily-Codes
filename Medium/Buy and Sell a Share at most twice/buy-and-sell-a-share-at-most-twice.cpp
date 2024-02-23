@@ -11,7 +11,7 @@ class Solution
     public:
         //User function Template for C++
         
-       int maxProfit(vector<int>&prices){
+        int maxProfit(vector<int>&prices){
             int n=prices.size();
             vector<int>prev(5,0), cur(5,0);
             prev[3]=prices[n-1];prev[1]=prices[n-1];
