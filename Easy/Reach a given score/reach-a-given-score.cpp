@@ -13,7 +13,7 @@ class Solution
     long long int count(long long int n)
     {
     	// Your code here
-    long long int dp[n+1]={0};
+    	long long int dp[n+1]={0};
     	dp[0]=1;
     	for(int i=3;i<=n;i++){
     	    dp[i]+=dp[i-3];
