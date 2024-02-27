@@ -41,4 +41,5 @@ int* game_with_number(int arr[], int n)
         arr[i]=arr[i] | arr[i+1];
     }
     return arr;
+    
 }
