@@ -11,7 +11,7 @@ public:
 	
 	long long sumBitDifferences(int arr[], int n) {
 	    // code here
-	     long cnt = 0;
+	    long cnt = 0;
         for(int i=31;i>=0;i--){
            long a = 0;
            for(int j=0;j<n;j++){
