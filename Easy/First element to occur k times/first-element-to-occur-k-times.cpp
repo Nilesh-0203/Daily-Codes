@@ -6,7 +6,8 @@ using namespace std;
 // } Driver Code Ends
 class Solution{
     public:
-    int firstElementKTime(int n, int k, int a[])
+    
+int firstElementKTime(int n, int k, int a[])
     {
         map<int,int>mp;
         for(int i=0;i<n;i++){
