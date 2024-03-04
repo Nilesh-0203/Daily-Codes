@@ -102,27 +102,21 @@ struct Node {
 class Solution{
     public:
     // return true/false denoting whether the tree is Symmetric or not
-    bool check(Node* head1,Node* head2){
-        if(head1==NULL && head2==NULL){
+    bool isMirror(struct Node* root1,struct Node* root2){
+        if(root1==NULL && root2==NULL){
             return true;
         }
-        if(head1==NULL || head2==NULL || head1->data!=head2->data){
+        if(root1 && root2 && root1->data==root2->data){
+            return isMirror(root1->left,root2->right) && isMirror(root1->right,root2->left);
+        }
+        else{
             return false;
         }
-        
-        bool left=check(head1->left,head2->right);
-        bool right=check(head1->right,head2->left);
-        
-        return left && right;
     }
     bool isSymmetric(struct Node* root)
     {
 	    // Code here
-	    if(root==NULL){
-	        return true;
-	    }
-	    
-	    return check(root->left,root->right);
+	    return isMirror(root,root);
     }
 };
 
