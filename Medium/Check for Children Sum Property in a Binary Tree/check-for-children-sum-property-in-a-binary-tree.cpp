@@ -113,11 +113,63 @@ class Solution{
         int b=(root->right!=NULL)?root->right->data:0;
         if(root->data!=a+b)return 0;
         return (inorder(root->left) && inorder(root->right));
+    }/*
+Following is the class structure of the Node class:
+
+class Node
+{
+public:
+    int data;
+    Node *left, *right;
+    Node()
+    {
+        this->data = 0;
+        left = NULL;
     }
+    Node(int data)
+    {
+        this->data = data; 
+        this->left = NULL;
+        this->right = NULL;
+    }
+    Node(int data, Node* left, Node* right)
+    {
+        this->data = data;
+        this->left = left;
+        this->right = right;
+    }
+};
+*/
+pair<bool,int> isSum(Node* root){
+    if(root==NULL){
+        pair<bool,int>p=make_pair(true,0);
+        return p;
+    }
+    if(root->left==NULL && root->right==NULL){
+        pair<bool,int>p=make_pair(true,root->data);
+        return p;
+    }
+    pair<bool,int> leftAns=isSum(root->left);
+    pair<bool,int> rightAns=isSum(root->right);
+
+    bool left=leftAns.first;
+    bool right=rightAns.first;
+    bool cond=root->data==leftAns.second+rightAns.second;
+
+    pair<bool,int>ans;
+    if(left && right && cond){
+        ans.first=true;
+        ans.second=root->data;
+        
+    }
+    else{
+        ans.first=false;
+    }
+    return ans;
+}
     int isSumProperty(Node *root)
     {
-     return inorder(root);
-     
+     return isSum(root).first;
     }
 };
 
