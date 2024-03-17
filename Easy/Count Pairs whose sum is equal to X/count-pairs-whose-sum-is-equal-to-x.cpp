@@ -52,7 +52,7 @@ class Solution{
     // your task is to complete this function
     int countPairs(struct Node* head1, struct Node* head2, int x) {
         // Code here
-        unordered_map<int,int>m1;
+         unordered_map<int,int>m1;
       
         Node* temp1 = head1;
         Node* temp2 = head2;
