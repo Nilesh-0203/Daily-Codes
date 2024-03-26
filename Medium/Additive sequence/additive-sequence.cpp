@@ -7,7 +7,6 @@ using namespace std;
 // User function template for C++
 class Solution {
   public:
-    
     string add(string num1, string num2)
    {
        int n = num1.size(), m = num2.size();
