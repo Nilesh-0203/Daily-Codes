@@ -109,10 +109,7 @@ class Solution {
   public:
     int minValue(Node* root) {
         // Code here
-        if(root->left==NULL){
-            return root->data;
-        }
-        if(root->left==NULL && root->right==NULL){
+         if(root->left==NULL){
             return root->data;
         }
         minValue(root->left);
