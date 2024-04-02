@@ -99,25 +99,25 @@ struct Node {
 class Solution
 {
     public:
-    void inorder(Node* root,vector<int>&v){
-        if(root==NULL){
-            return;
+     void inorder(Node* node, Node*& prev, int& minDiff) {
+        if (node == nullptr) return;
+        
+        inorder(node->left, prev, minDiff);
+        
+        if (prev != nullptr) {
+            minDiff = min(minDiff, node->data - prev->data);
         }
-        inorder(root->left,v);
-        v.push_back(root->data);
-        inorder(root->right,v);
+        prev = node;
+        
+        inorder(node->right, prev, minDiff);
     }
+    
     int absolute_diff(Node *root)
     {
-        //Your code here
-        vector<int>v;
-        inorder(root,v);
-        int mini=INT_MAX;
-        for(int i=1;i<v.size();i++){
-            int diff=abs(v[i]-v[i-1]);
-            mini=min(mini,diff);
-        }
-        return mini;
+        int minDiff = INT_MAX;
+        Node* prev = nullptr;
+        inorder(root, prev, minDiff);
+        return minDiff;
     }
 };
 
