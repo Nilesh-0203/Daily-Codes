@@ -100,7 +100,6 @@ class Solution
     public:
     
     /*You are required to complete below function */
-    
     void solve(Node* root,vector<int>&path,Node* lcaNode){
         path.push_back(root->data);
         if(root->data==lcaNode->data){
