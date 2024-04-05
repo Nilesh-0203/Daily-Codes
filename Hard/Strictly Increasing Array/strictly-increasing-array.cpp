@@ -6,6 +6,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
+
     int LIS(vector<int>&arr,int n){
         vector<int>dp(n,1);
         for(int i=1;i<n;i++){
