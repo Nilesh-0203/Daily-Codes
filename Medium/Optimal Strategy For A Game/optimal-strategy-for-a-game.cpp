@@ -7,23 +7,22 @@ using namespace std;
 //Function to find the maximum possible amount of money we can win.
 class Solution{
     public:
-    int t[1001][1001];
-    long long solve(int i,int j,int arr[]){
+    long long solve(int i,int j,int arr[],vector<vector<int>>&dp){
         if(i>j){
             return 0;
         }
-        if(t[i][j]!=-1){
-            return t[i][j];
+        if(dp[i][j]!=-1){
+            return dp[i][j];
         }
-        long long takeLeft=arr[i]+min(solve(i+2,j,arr),solve(i+1,j-1,arr));
-        long long takeRight=arr[j]+min(solve(i,j-2,arr),solve(i+1,j-1,arr));
+        long long takeLeft=arr[i]+min(solve(i+2,j,arr,dp),solve(i+1,j-1,arr,dp));
+        long long takeRight=arr[j]+min(solve(i,j-2,arr,dp),solve(i+1,j-1,arr,dp));
         
-        return t[i][j]=max(takeLeft,takeRight);
+        return dp[i][j]=max(takeLeft,takeRight);
     }
     long long maximumAmount(int n, int arr[]){
         // Your code here
-        memset(t,-1,sizeof(t));
-        return solve(0,n-1,arr);
+        vector<vector<int>>dp(n,vector<int>(n,-1));
+        return solve(0,n-1,arr,dp);
     }
 };
 
