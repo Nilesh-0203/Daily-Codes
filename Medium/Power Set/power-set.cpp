@@ -5,22 +5,26 @@ using namespace std;
 // } Driver Code Ends
 class Solution{
 	public:
-		 void solve(string& s,string temp,vector<string>&ans,int index){
-            if(index==s.length()){
-                if(temp.length()>=1)
-                ans.push_back(temp);
-                return;
-            }
-            solve(s,temp,ans,index+1);
-            solve(s,temp+s[index],ans,index+1);
-        }
-        vector<string> AllPossibleStrings(string s){
-            vector<string>ans;
-            solve(s,"",ans,0);
-            sort(ans.begin(),ans.end());
-            return ans;
-            
-        }
+	    vector<string>result;
+	    void solve(string &s,string &curr,int idx){
+	        if(idx>=s.length()){
+	            if(curr!=""){
+	                result.push_back(curr);
+	            }
+	            return;
+	        }
+	        curr.push_back(s[idx]);
+	        solve(s,curr,idx+1);
+	        curr.pop_back();
+	        solve(s,curr,idx+1);
+	    }
+		vector<string> AllPossibleStrings(string s){
+		    // Code here
+		    string curr="";
+		    solve(s,curr,0);
+		    sort(result.begin(),result.end());
+		    return result;
+		}
 };
 
 //{ Driver Code Starts.
