@@ -100,21 +100,27 @@ class Solution
     vector<int> Kdistance(struct Node *root, int k)
     {
       // Your code here
-      vector<vector<int>>ans;
         if(root==NULL){
             return {};
         }
 
         queue<Node*>q;
         q.push(root);
-
+        vector<int>ans;
+        int cnt=0;
         while(!q.empty()){
             int n=q.size();
-            vector<int>v;
+            if(cnt==k){
+                for(int i=0;i<n;i++){
+                  Node* front=q.front();
+                  q.pop();
+                  ans.push_back(front->data);
+                }
+                return ans;
+            }
             for(int i=0;i<n;i++){
                 Node* front=q.front();
                 q.pop();
-                v.push_back(front->data);
 
                 if(front->left){
                     q.push(front->left);
@@ -123,12 +129,9 @@ class Solution
                     q.push(front->right);
                 }
             }
-            ans.push_back(v);
+            cnt++;
         }
-        if(k>=ans.size()){
-            return {};
-        }
-        return ans[k];
+        return ans;
     }
 };
 
