@@ -51,26 +51,32 @@ class Solution
     public:
 
     //Function to return a tree created from postorder and inoreder traversals.
-    void createMap(int in[],map<int,int>&mp,int n){
+    void createMap(int in[],map<int,vector<int>>&mp,int n){
         for(int i=0;i<n;i++){
-            mp[in[i]]=i;
+            mp[in[i]].push_back(i);
+        }
+        for(auto &it:mp){
+            reverse(it.second.begin(),it.second.end());
         }
     }
-    Node* solve(int in[],int post[],int &index,int inorderStart,int inorderEnd,int n,map<int,int>&mp){
+    Node* solve(int in[],int post[],int &index,int inorderStart,int inorderEnd,int n,map<int,vector<int>>&mp){
         if(index<0 || inorderStart>inorderEnd){
             return NULL;
         }
         int element=post[index--];
         Node* root=new Node(element);
-        int position=mp[element];
+        int position=mp[element].back();
+        mp[element].pop_back();
+        
         root->right=solve(in,post,index,position+1,inorderEnd,n,mp);
         root->left=solve(in,post,index,inorderStart,position-1,n,mp);
+        
         return root;
     }
     Node *buildTree(int in[], int post[], int n) {
         // Your code here
         int postOrderIndex=n-1;
-        map<int,int>mp;
+        map<int,vector<int>>mp;
         createMap(in,mp,n);
         Node* ans=solve(in,post,postOrderIndex,0,n-1,n,mp);
         return ans;
