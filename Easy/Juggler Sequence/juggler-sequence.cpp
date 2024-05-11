@@ -11,7 +11,6 @@ using namespace std;
 class Solution {
   public:
     vector<long long> jugglerSequence(long long n) {
-        // code here
         vector<long long>ans;
         ans.push_back(n);
         while(n!=1){
