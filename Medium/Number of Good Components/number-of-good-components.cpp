@@ -29,7 +29,7 @@ class Matrix {
 
 class Solution {
   public:
-     int findNumberOfGoodComponent(int e, int v, vector<vector<int>> &edges) {
+      int findNumberOfGoodComponent(int e, int v, vector<vector<int>> &edges) {
         int g =0;
         vector<vector<int>> adj(v);
         unordered_map<int,int> vis;
@@ -69,7 +69,6 @@ class Solution {
             }
         }
     }
-
 };
 
 
