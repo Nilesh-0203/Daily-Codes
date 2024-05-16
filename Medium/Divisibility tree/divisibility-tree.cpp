@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
 public:
-    int ans=0;
+	int ans=0;
     int dfs(vector<int>adj[],vector<int>&vis,int start){
         vis[start]=1;
         int cnt=0;
