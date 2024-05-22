@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-      bool solve(double md,vector<int>&st,int n,int k)
+     bool solve(double md,vector<int>&st,int n,int k)
   {
       int count=0;
       for(int i=1;i<n;i++)
