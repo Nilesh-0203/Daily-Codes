@@ -7,29 +7,28 @@ using namespace std;
 
 class Solution {
   public:
-    int t[100001];
-    int solve(int n,int x,int y){
+    int solve(int n,int x,int y,vector<int>&dp){
         if(n<=1){
             return n;
         }
-        if(t[n]!=-1){
-            return t[n];
+        if(dp[n]!=-1){
+            return dp[n];
         }
         int ans=1;
         if(n>=x){
-            ans&=solve(n-x,x,y);
+            ans&=solve(n-x,x,y,dp);
         }
         if(n>=y){
-            ans&=solve(n-y,x,y);
+            ans&=solve(n-y,x,y,dp);
         }
-        ans&=solve(n-1,x,y);
+        ans&=solve(n-1,x,y,dp);
         
-        return t[n]=ans ^ 1;
+        return dp[n]=ans ^ 1;
     }
     int findWinner(int n, int x, int y) {
         // code here
-        memset(t,-1,sizeof(t));
-        return solve(n,x,y);
+        vector<int>dp(n+1,-1);
+        return solve(n,x,y,dp);
     }
 };
 
