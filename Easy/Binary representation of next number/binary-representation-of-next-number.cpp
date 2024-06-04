@@ -35,7 +35,6 @@ class Solution {
          temp=temp.substr(i);
         
         return temp;
-        
     }
 };
 
