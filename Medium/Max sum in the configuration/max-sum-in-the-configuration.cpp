@@ -8,8 +8,7 @@ using namespace std;
 class Solution {
   public:
     long long max_sum(int a[], int n) {
-        // Your code here
-          long long sum=0,org=0;
+        long long sum=0,org=0;
         for(int i=0;i<n;i++)
         {
             sum+=a[i];
