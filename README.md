@@ -14,6 +14,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0344-reverse-string](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0344-reverse-string) |
 | [0409-longest-palindrome](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0409-longest-palindrome) |
 | [0648-replace-words](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0648-replace-words) |
+| [0957-minimum-add-to-make-parentheses-valid](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0957-minimum-add-to-make-parentheses-valid) |
 | [1044-find-common-characters](https://github.com/Nilesh-0203/Daily-Codes/tree/master/1044-find-common-characters) |
 | [2572-append-characters-to-string-to-make-subsequence](https://github.com/Nilesh-0203/Daily-Codes/tree/master/2572-append-characters-to-string-to-make-subsequence) |
 # Greedy
@@ -23,6 +24,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0409-longest-palindrome](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0409-longest-palindrome) |
 | [0502-ipo](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0502-ipo) |
 | [0876-hand-of-straights](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0876-hand-of-straights) |
+| [0957-minimum-add-to-make-parentheses-valid](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0957-minimum-add-to-make-parentheses-valid) |
 | [2148-minimum-number-of-moves-to-seat-everyone](https://github.com/Nilesh-0203/Daily-Codes/tree/master/2148-minimum-number-of-moves-to-seat-everyone) |
 | [2572-append-characters-to-string-to-make-subsequence](https://github.com/Nilesh-0203/Daily-Codes/tree/master/2572-append-characters-to-string-to-make-subsequence) |
 # Hash Table
@@ -81,3 +83,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0502-ipo](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0502-ipo) |
+# Stack
+|  |
+| ------- |
+| [0957-minimum-add-to-make-parentheses-valid](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0957-minimum-add-to-make-parentheses-valid) |
