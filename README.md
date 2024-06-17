@@ -42,6 +42,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0075-sort-colors](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0075-sort-colors) |
+| [0108-convert-sorted-array-to-binary-search-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
 | [0330-patching-array](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0330-patching-array) |
 | [0502-ipo](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0502-ipo) |
 | [0523-continuous-subarray-sum](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0523-continuous-subarray-sum) |
@@ -96,6 +97,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 # Tree
 |  |
 | ------- |
+| [0108-convert-sorted-array-to-binary-search-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
 | [0236-lowest-common-ancestor-of-a-binary-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0236-lowest-common-ancestor-of-a-binary-tree) |
 # Depth-First Search
 |  |
@@ -104,4 +106,13 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 # Binary Tree
 |  |
 | ------- |
+| [0108-convert-sorted-array-to-binary-search-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
 | [0236-lowest-common-ancestor-of-a-binary-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0236-lowest-common-ancestor-of-a-binary-tree) |
+# Divide and Conquer
+|  |
+| ------- |
+| [0108-convert-sorted-array-to-binary-search-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
+# Binary Search Tree
+|  |
+| ------- |
+| [0108-convert-sorted-array-to-binary-search-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
