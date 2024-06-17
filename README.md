@@ -43,6 +43,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0075-sort-colors](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0075-sort-colors) |
 | [0108-convert-sorted-array-to-binary-search-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
+| [0118-pascals-triangle](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0118-pascals-triangle) |
 | [0330-patching-array](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0330-patching-array) |
 | [0502-ipo](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0502-ipo) |
 | [0523-continuous-subarray-sum](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0523-continuous-subarray-sum) |
@@ -138,3 +139,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0114-flatten-binary-tree-to-linked-list](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0114-flatten-binary-tree-to-linked-list) |
+# Dynamic Programming
+|  |
+| ------- |
+| [0118-pascals-triangle](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0118-pascals-triangle) |
