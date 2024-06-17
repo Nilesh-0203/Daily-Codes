@@ -109,6 +109,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0114-flatten-binary-tree-to-linked-list](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0114-flatten-binary-tree-to-linked-list) |
+| [0207-course-schedule](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0207-course-schedule) |
 | [0226-invert-binary-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0226-invert-binary-tree) |
 | [0230-kth-smallest-element-in-a-bst](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0230-kth-smallest-element-in-a-bst) |
 | [0236-lowest-common-ancestor-of-a-binary-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0236-lowest-common-ancestor-of-a-binary-tree) |
@@ -134,6 +135,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 # Breadth-First Search
 |  |
 | ------- |
+| [0207-course-schedule](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0207-course-schedule) |
 | [0226-invert-binary-tree](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0226-invert-binary-tree) |
 # Linked List
 |  |
@@ -143,3 +145,11 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0118-pascals-triangle](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0118-pascals-triangle) |
+# Graph
+|  |
+| ------- |
+| [0207-course-schedule](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0207-course-schedule) |
+# Topological Sort
+|  |
+| ------- |
+| [0207-course-schedule](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0207-course-schedule) |
