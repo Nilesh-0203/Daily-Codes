@@ -44,7 +44,6 @@ class Solution {
             d+=str[i];
             i++;
         }
-        //cout<<"a : "<<a<<" "<<"b : "<<b<<" "<<c<<" "<<d;
         double l=stoi(a);
         double m=stoi(b);
         double n=stoi(c);
