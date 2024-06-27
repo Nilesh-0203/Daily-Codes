@@ -1,0 +1,15 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/remove-duplicate-elements-from-sorted-array/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article">Remove duplicate elements from sorted Array</a></h2><h3>Difficulty Level : Difficulty: Easy</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">Given a <strong>sorted</strong> array<strong> a[]</strong> of size <strong>n</strong>, delete all the duplicated elements from a[] &amp; modify the array such that only distinct elements should be present there.</span><br><br><span style="font-size: 18px;"><strong>Note: </strong><br>1.<strong>&nbsp;</strong>Don't use set or HashMap to solve the problem.<br>2. You <strong>must</strong> return the modified array <strong>size </strong>where only distinct elements are present in the array, the driver code<strong>&nbsp;will print</strong> all the elements of the modified array.</span><br><br><span style="font-size: 18px;"><strong>Example 1:</strong></span></p>
+<pre><span style="font-size: 18px;"><strong>Input:</strong>
+N = 5
+Array = {2, 2, 2, 2, 2}
+<strong>Output:</strong> <br>1
+<strong>Explanation:</strong> After removing all the duplicates only one instance of 2 will remain i.e. {2} so modify array will contains 2 at first position and you should <strong>return 1</strong> after modify the array.</span>
+</pre>
+<p><span style="font-size: 18px;"><strong>Example 2:</strong></span></p>
+<pre><span style="font-size: 18px;"><strong>Input:</strong>
+N = 4
+Array = {1, 2, 2, 4}
+<strong>Output:</strong> 3<br><strong>Explation: </strong>After removing all duplicates modify array will contains {1, 2, 4} at first 3 positions so you should <strong>return 3</strong> after modify the array.<br><br></span></pre>
+<p><span style="font-size: 18px;"><strong>Your Task: &nbsp;</strong><br>You don't need to read input or print anything. Complete the function <strong>remove_duplicate()</strong> which takes the array a[] and its size n as input parameters and modifies it <strong>in place</strong> to delete all the duplicates. The function must return an integer X denoting the no. of distinct elements in the array keeping the first X elements of an array in increasing order.&nbsp;</span></p>
+<p><span style="font-size: 18px;"><strong>Expected Time Complexity: </strong>O(N)<br><strong>Expected Auxiliary Space:</strong> O(1)</span></p>
+<p><span style="font-size: 18px;"><strong>Constraints:</strong><br>1 ≤ N ≤ 10<sup>4</sup><br>1 ≤ A[i] ≤ 10<sup>6</sup></span></p></div><p><span style=font-size:18px><strong>Company Tags : </strong><br><code>Zoho</code>&nbsp;<code>Morgan Stanley</code>&nbsp;<code>Microsoft</code>&nbsp;<code>Samsung</code>&nbsp;<code>Google</code>&nbsp;<code>Wipro</code>&nbsp;<code>Xome</code>&nbsp;<br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>two-pointer-algorithm</code>&nbsp;<code>Arrays</code>&nbsp;<code>Data Structures</code>&nbsp;<code>Algorithms</code>&nbsp;
