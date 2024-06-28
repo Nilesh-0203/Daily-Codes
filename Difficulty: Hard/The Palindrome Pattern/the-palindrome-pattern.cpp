@@ -6,6 +6,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
+
     int n;
     bool checkRow(vector<vector<int>> &arr,int i){
         int x=0,y=n-1;
