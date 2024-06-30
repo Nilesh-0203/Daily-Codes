@@ -45,7 +45,6 @@ class Solution {
         if(x==1){
             head=head->next;
             head->prev=NULL;
-            temp->next=NULL;
             delete temp;
             return head;
         }
@@ -55,16 +54,10 @@ class Solution {
             temp=temp->next;
             cnt++;
         }
-        if(temp->next==NULL){
-            Node* nextt=temp->next;
-            pre->next=nextt;
-            return head;
+        pre->next=temp->next;
+        if(temp->next!=NULL){
+            temp->next->prev=pre;
         }
-        Node* nextt=temp->next;
-        temp->next->prev=pre;
-        pre->next=nextt;
-        temp->next=NULL;
-        temp->prev=NULL;
         delete temp;
         return head;
     }
