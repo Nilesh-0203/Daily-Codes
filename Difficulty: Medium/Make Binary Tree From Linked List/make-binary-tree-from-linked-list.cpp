@@ -122,23 +122,6 @@ struct TreeNode
 */
 
 // Function to make binary tree from linked list.
-TreeNode* solve(vector<int>&v,int i,int n){
-    if(i>=n){
-        return NULL;
-    }
-    TreeNode* root=new TreeNode(v[i]);
-    root->left=solve(v,2*i+1,n);
-    root->right=solve(v,2*i+2,n);
-    return root;
-}
 void convert(Node *head, TreeNode *&root) {
     // Your code here
-    vector<int>v;
-    Node* temp=head;
-    while(temp!=NULL){
-        v.push_back(temp->data);
-        temp=temp->next;
-    }
-    int n=v.size();
-    root=solve(v,0,n);
 }
