@@ -45,8 +45,7 @@ public:
     void insert(string word) {
         insertUtil(root,word);
     }
-    
-    void printSuggestion(TrieNode* curr,vector<string>&temp,string prefix){
+    void printSuggestions(TrieNode* curr,vector<string>&temp,string prefix){
         if(curr->isTerminal){
             temp.push_back(prefix);
         }
@@ -54,7 +53,7 @@ public:
             TrieNode* next=curr->children[ch-'a'];
             if(next!=NULL){
                 prefix.push_back(ch);
-                printSuggestion(next,temp,prefix);
+                printSuggestions(next,temp,prefix);
                 prefix.pop_back();
             }
         }
@@ -71,7 +70,7 @@ public:
                 break;
             }
             vector<string>temp;
-            printSuggestion(curr,temp,prefix);
+            printSuggestions(curr,temp,prefix);
             output.push_back(temp);
             temp.clear();
             prev=curr;
