@@ -98,6 +98,7 @@ struct Node {
         left = right = NULL;
     }
 };*/
+
 class NodeV{
     public :
         int minN , maxN, maxS ;
