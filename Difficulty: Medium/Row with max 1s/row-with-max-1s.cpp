@@ -16,7 +16,8 @@ class Solution {
             int count=0;
             for(int j=0;j<n;j++){
                 if(arr[i][j]==1){
-                    count++;
+                    count=n-j;
+                    break;
                 }
             }
             if(count>maxi){
