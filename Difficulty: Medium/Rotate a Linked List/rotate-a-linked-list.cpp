@@ -1,15 +1,25 @@
 //{ Driver Code Starts
+// Initial Template for C++
 #include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
     int data;
-    struct Node *next;
+    struct Node* next;
+
     Node(int x) {
         data = x;
         next = NULL;
     }
 };
+
+void printList(Node* node) {
+    while (node != NULL) {
+        cout << node->data << " ";
+        node = node->next;
+    }
+    cout << "\n";
+}
 
 
 // } Driver Code Ends
@@ -26,11 +36,9 @@ struct Node {
 
 */
 
-
-class Solution
-{
-    public:
-    //Function to rotate a linked list.
+class Solution {
+  public:
+    // Function to rotate a linked list.
     Node* find(Node* head,int k){
         int cnt=1;
         Node* temp=head;
@@ -63,45 +71,44 @@ class Solution
         return head;
     }
 };
-    
 
 
 //{ Driver Code Starts.
 
-void printList(Node *n)
-{
-    while (n != NULL)
-    {
-        cout<< n->data << " ";
-        n = n->next;
-    }
-    cout<< endl;
-}
-
-int main()
-{
+int main() {
     int t;
-    cin>>t;
-    while(t--)
-    {
-        int n, val, k;
-        cin>>n;
-        
-        cin>> val;
-        Node *head = new Node(val);
-        Node *tail = head;
-        
-        for(int i=0; i<n-1; i++)
-        {
-            cin>> val;
-            tail->next = new Node(val);
-            tail = tail->next;
+    cin >> t;
+    cin.ignore();
+
+    while (t--) {
+        vector<int> arr;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int number;
+
+        // Read numbers from the input line
+        while (ss >> number) {
+            arr.push_back(number);
         }
-        
-        cin>> k;
-        
+
+        Node* head = nullptr;
+
+        // Check if the array is empty
+        if (!arr.empty()) {
+            head = new Node(arr[0]);
+            Node* tail = head;
+            for (size_t i = 1; i < arr.size(); ++i) {
+                tail->next = new Node(arr[i]);
+                tail = tail->next;
+            }
+        }
+        int k;
+        cin >> k;
+        cin.ignore();
+
         Solution ob;
-        head = ob.rotate(head,k);
+        head = ob.rotate(head, k);
         printList(head);
     }
     return 1;
