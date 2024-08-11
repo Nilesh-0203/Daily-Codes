@@ -27,7 +27,7 @@ class Solution
 {
     public:
     //Function to find the maximum profit and the number of jobs done.
-     bool static compare(Job a, Job b){
+    bool static compare(Job a, Job b){
        return (a.profit > b.profit);
     }
     
@@ -53,7 +53,7 @@ class Solution
         }
      
      return {totalProfit, maxProfit};
-    }  
+    } 
 };
 
 //{ Driver Code Starts.
