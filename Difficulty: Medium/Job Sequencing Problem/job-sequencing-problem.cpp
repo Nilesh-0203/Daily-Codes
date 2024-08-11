@@ -53,7 +53,7 @@ class Solution
         }
      
      return {totalProfit, maxProfit};
-    } 
+    }  
 };
 
 //{ Driver Code Starts.
