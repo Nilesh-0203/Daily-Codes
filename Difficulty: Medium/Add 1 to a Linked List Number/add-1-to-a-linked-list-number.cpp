@@ -55,39 +55,29 @@ class Solution {
         }
         return prev;
     }
-    void insertAtEnd(Node* &head,Node* &tail,int data){
-        Node* newNode=new Node(data);
-        if(head==NULL){
-            head=newNode;
-            tail=newNode;
-        }
-        else{
-            tail->next=newNode;
-            tail=newNode;
-        }
-    }
     Node* addOne(Node* head) {
         // Your Code here
         // return head of list after adding one
         head=reverse(head);
-        Node* ansHead=NULL;
-        Node* ansTail=NULL;
         int carry=1;
         Node* temp=head;
-        while(carry!=0 || temp!=NULL){
-            int val=0;
-            if(temp!=NULL){
-               val=temp->data;
-               temp=temp->next;
-            }
-            int sum=val+carry;
-            int digit=sum%10;
+        while(carry!=0 && temp!=NULL){
+            int sum=temp->data+carry;
+            temp->data=sum%10;
             carry=sum/10;
-            
-            insertAtEnd(ansHead,ansTail,digit);
+            if(temp->next!=NULL){
+                 temp=temp->next;
+            }
+            else{
+                break;
+            }
         }
-        ansHead=reverse(ansHead);
-        return ansHead;
+        if(carry>0){
+            Node* newNode=new Node(carry);
+            temp->next=newNode;
+        }
+        head=reverse(head);
+        return head;
     }
 };
 
