@@ -47,21 +47,6 @@ struct Node {
 class Solution {
   public:
     // Function to find the length of a loop in the linked list.
-    /*************************************************
-    
-    class Node {
-        public :
-
-        int data;
-        Node *next;
-
-        Node(int data) {
-            this -> data = data;
-            this -> next = NULL;
-        }
-    };
-
-*************************************************/
     Node* floydDetectionLoop(Node* head){
         if(head==NULL){
             return NULL;
