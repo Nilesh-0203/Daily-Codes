@@ -10,7 +10,7 @@ class Solution
     public:
     //Function to return the minimum cost to react at bottom
 	//right cell from top left cell.
-	bool safe(int r,int c,int n){
+    bool safe(int r,int c,int n){
         if(r>=0 && r<n && c>=0 && c<n) return true;
         else return false;
     }
