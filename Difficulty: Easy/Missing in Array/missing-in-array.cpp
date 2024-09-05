@@ -14,9 +14,7 @@ class Solution {
     int missingNumber(int n, vector<int>& arr) {
 
         // Your code goes here
-        int sum=accumulate(arr.begin(),arr.end(),0);
-        int osum=(n*(n+1))/2;
-        return osum-sum;
+        return (n*(n+1))/2-accumulate(arr.begin(),arr.end(),0);
     }
 };
 
