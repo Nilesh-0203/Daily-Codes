@@ -10,8 +10,7 @@ class Solution {
     // Returns count buildings that can see sunlight
     int countBuildings(vector<int> &height) {
         // code here
-          
-        int maxH = 0, ans = 0;
+         int maxH = 0, ans = 0;
         for(auto x: height){
             if(x>maxH){
                 maxH = x;
