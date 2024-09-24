@@ -9,7 +9,7 @@ class Solution
     public:
     //Function to find the smallest window in the string s consisting
     //of all the characters of string p.
-    string smallestWindow (string s, string t)
+     string smallestWindow (string s, string t)
     {
         // Your code here
         if (s.length() < t.length()) return "-1";
