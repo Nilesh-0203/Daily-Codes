@@ -96,7 +96,7 @@ class Solution {
   public:
     // Function to return a list of integers denoting the node
     // values of both the BST in a sorted order.
-    void inorder(Node* root,vector<int>&v){
+     void inorder(Node* root,vector<int>&v){
         if(root==NULL){
             return ;
         }
