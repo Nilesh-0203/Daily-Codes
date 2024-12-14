@@ -23,7 +23,7 @@ class Solution {
                 }
             }
             else{
-                if(arr[mid]<key && arr[r]>=key){
+                if(arr[mid]<key && key<=arr[r]){
                     l=mid+1;
                 }
                 else{
@@ -53,6 +53,7 @@ int main() {
         cin >> key;
         Solution ob;
         cout << ob.search(arr, key) << endl;
+        cout << "~" << endl;
     }
     return 0;
 }
