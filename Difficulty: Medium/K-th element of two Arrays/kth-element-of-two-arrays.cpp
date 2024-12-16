@@ -6,38 +6,31 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    int kthElement(int k, vector<int>& arr1, vector<int>& arr2) {
+    int kthElement(vector<int>& a, vector<int>& b, int k) {
         // code here
         int i=0,j=0;
-        int cnt=0;
-        while(i<arr1.size() && j<arr2.size()){
-            if(arr1[i]<arr2[j]){
-                cnt++;
-                if(cnt==k){
-                    return (long)arr1[i];
-                }
+        int count=0;
+        int ans=0;
+        while(i<a.size() && j<b.size()){
+            if(a[i]<=b[j]){
+                count++;
+                if(count==k)return a[i];
                 i++;
             }
             else{
-                cnt++;
-                if(cnt==k){
-                    return (long)arr2[j];
-                }
+                count++;
+                if(count==k)return b[j];
                 j++;
             }
         }
-        while(i<arr1.size()){
-            cnt++;
-            if(cnt==k){
-                return (long)arr1[i];
-            }
+        while(i<a.size()){
+            count++;
+            if(count==k)return a[i];
             i++;
         }
-        while(j<arr2.size()){
-            cnt++;
-            if(cnt==k){
-                return (long)arr2[j];
-            }
+        while(j<b.size()){
+            count++;
+            if(count==k)return b[j];
             j++;
         }
         return -1;
@@ -57,22 +50,22 @@ int main() {
         cin.ignore();
         string input;
         int num;
-        vector<int> arr1, arr2;
+        vector<int> a, b;
 
         getline(cin, input);
         stringstream s2(input);
         while (s2 >> num) {
-            arr1.push_back(num);
+            a.push_back(num);
         }
 
         getline(cin, input);
         stringstream s3(input);
         while (s3 >> num) {
-            arr2.push_back(num);
+            b.push_back(num);
         }
 
         Solution ob;
-        cout << ob.kthElement(k, arr1, arr2) << endl;
+        cout << ob.kthElement(a, b, k) << endl << "~\n";
     }
     return 0;
 }
