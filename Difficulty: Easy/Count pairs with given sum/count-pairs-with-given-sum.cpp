@@ -18,7 +18,6 @@ class Solution {
             if(mp.find(target-i)!=mp.end()){
                 count+=mp[target-i];
             }
-            
         }
         return count;
     }
