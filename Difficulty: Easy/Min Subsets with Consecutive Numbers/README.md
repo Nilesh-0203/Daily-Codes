@@ -1,0 +1,10 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/min-subsets-with-consecutive-numbers0601/0">Min Subsets with Consecutive Numbers</a></h2><h3>Difficulty Level : Difficulty: Easy</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-family: arial,helvetica,sans-serif;"><span style="font-size: 18px;">Given an array of distinct positive numbers, the task is to calculate the minimum number of subsets (or subsequences) from the array such that each subset contains consecutive numbers.</span></span></p>
+<p><span style="font-family: arial,helvetica,sans-serif;"><span style="font-size: 18px;"><strong>Examples:</strong></span></span></p>
+<pre><span style="font-family: arial,helvetica,sans-serif;"><span style="font-size: 18px;"><strong>Input: </strong>arr[] = [100, 56, 5, 6, 102, 58, 101, 57, 7, 103]</span>
+<span style="font-size: 18px;"><strong>Output:</strong>3
+<strong>Explanation: </strong>{5, 6, 7}, {56, 57, 58}, {100, 101, 102, 103} are 3 subset in which numbers are consecutive.</span></span></pre>
+<pre><span style="font-family: arial,helvetica,sans-serif;"><span style="font-size: 18px;"><strong>Input: </strong>arr[] = [10, 100, 105]
+<strong>Output: </strong>3
+<strong>Explanation: </strong>{10}, {100} and {105} are 3 subset in which numbers are consecutive.</span></span> </pre>
+<p><span style="font-family: arial,helvetica,sans-serif;"><span style="font-size: 18px;"><strong>Expected Time Complexity:</strong> O(n*log(n))<br><strong>Expected Auxiliary Space:</strong> O(1)</span></span></p>
+<p><span style="font-family: arial,helvetica,sans-serif;"><span style="font-size: 18px;"><strong>Constraints:</strong><br>1 ≤ arr.size() ≤ 10<sup>5</sup><br>0 ≤ arr[i] ≤ 10<sup>6</sup></span></span></p></div><br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Arrays</code>&nbsp;<code>Sorting</code>&nbsp;<code>Data Structures</code>&nbsp;<code>Algorithms</code>&nbsp;
