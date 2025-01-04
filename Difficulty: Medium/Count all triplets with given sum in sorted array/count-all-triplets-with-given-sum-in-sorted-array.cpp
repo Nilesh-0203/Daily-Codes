@@ -7,8 +7,7 @@ using namespace std;
 class Solution {
   public:
     int countTriplets(vector<int> &arr, int target) {
-        // Code Here
-          int cnt=0;
+        int cnt=0;
         int n=arr.size();
         for(int i=0;i<=n-3;i++){
             int s=i+1;
