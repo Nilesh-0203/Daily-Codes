@@ -6,7 +6,8 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-      int atMostK(vector<int> &arr, int k) {
+    
+int atMostK(vector<int> &arr, int k) {
         // code here
         int left=0,right=0;
         int count=0;
