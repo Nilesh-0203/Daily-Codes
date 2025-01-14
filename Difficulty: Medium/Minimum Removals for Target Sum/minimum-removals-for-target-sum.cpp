@@ -6,7 +6,8 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    int minRemovals(vector<int> &arr, int k) {
+    
+int minRemovals(vector<int> &arr, int k) {
         // code here
         int total=accumulate(arr.begin(),arr.end(),0);
         if(total==k)return arr.size();
