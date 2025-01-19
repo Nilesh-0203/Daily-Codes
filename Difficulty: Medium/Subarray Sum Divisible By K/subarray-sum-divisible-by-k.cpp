@@ -7,7 +7,8 @@ using namespace std;
 class Solution {
   public:
     // Function to count the number of subarrays with a sum that is divisible by K
-    int subCount(vector<int>& arr, int k) {
+    
+int subCount(vector<int>& arr, int k) {
         // Your code goes here
         int n = arr.size(), res = 0;
         unordered_map<int, int> prefCnt;
