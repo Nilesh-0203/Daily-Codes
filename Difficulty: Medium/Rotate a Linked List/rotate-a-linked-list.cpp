@@ -38,7 +38,6 @@ struct Node {
 
 class Solution {
   public:
-    // Function to rotate a linked list.
     Node* find(Node* head,int k){
         int cnt=1;
         Node* temp=head;
@@ -48,8 +47,7 @@ class Solution {
         }
         return temp;
     }
-    Node* rotate(Node* head, int k)
-    {
+    Node* rotate(Node* head, int k) {
         // Your code here
         if(head==NULL){
             return NULL;
@@ -110,6 +108,7 @@ int main() {
         Solution ob;
         head = ob.rotate(head, k);
         printList(head);
+        cout << "~\n";
     }
     return 1;
 }
