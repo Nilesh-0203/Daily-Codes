@@ -63,7 +63,8 @@ int zeroSumSubmat(vector<vector<int>> &mat) {
     }
 
     return maxArea;
- }
+}
+
 };
 
 
