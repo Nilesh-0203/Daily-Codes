@@ -71,6 +71,8 @@ public:
         minFrequency = 1; // Reset minFrequency to 1
     }
 };
+
+
 /**
  * Your LFUCache object will be instantiated and called as such:
  * LFUCache* obj = new LFUCache(capacity);
