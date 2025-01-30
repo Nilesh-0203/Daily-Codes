@@ -8,8 +8,8 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 
-class Solution{
-public:
+class Solution {
+  public:
     bool can_place(int i,int j,int n,vector<int>ans){
         for(int k=0;k<i;k++){
             if(ans[k]==j || (ans[k]-i+k > 0 and ans[k]-i+k==j) || (ans[k]+i-k<n+1 and ans[k]+i-k==j)){
@@ -39,7 +39,6 @@ public:
         
     }
 };
-
 
 //{ Driver Code Starts.
 
