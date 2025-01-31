@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
   public:
     // Function to find a solved Sudoku.
-     int N = 9;
+    int N = 9;
     bool isPossible(int currRow, int currCol, vector <vector <int>> &mat, int val){
         for(int i = 0; i < N; i++){
             if(mat[currRow][i] == val || mat[i][currCol] == val) return false;
