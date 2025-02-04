@@ -106,7 +106,7 @@ Node* newNode(int val) {
 
 class Solution {
   public:
-     int ans=INT_MIN;
+    int ans=INT_MIN;
      int dia(Node* root){
          if(!root)return 0;
       int d1=dia(root->left)+1,d2=dia(root->right)+1;
