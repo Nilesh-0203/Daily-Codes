@@ -137,6 +137,7 @@ int main() {
 
         else
             cout << "false\n";
+        cout << "~" << endl;
     }
     return 0;
 }
