@@ -1,0 +1,14 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1">Balanced Tree Check</a></h2><h3>Difficulty Level : Difficulty: Easy</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 14pt;">Given a <strong>binary tree</strong>, determine if it is <strong>height-balanced</strong>. A binary tree is considered height-balanced if the absolute difference in heights of the left and right subtrees is at most 1 for every node in the tree.</span></p>
+<p><span style="font-size: 14pt;"><strong>Examples:</strong></span></p>
+<pre><strong style="font-size: 14pt; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Input: </strong><span style="font-size: 14pt; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">root[] = [10, 20, 30, 40, 60]</span><br><br><span style="font-size: 14pt;">&nbsp;&nbsp; <img src="https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700166/Web/Other/blobid1_1739353289.png" alt="" width="300" height="260">
+<strong>Output:</strong> true
+<strong>Explanation:</strong> The height difference between the left and right subtrees at all nodes is at most <code>1</code>. Hence, the tree is balanced.</span></pre>
+<pre><span style="font-size: 14pt;"><strong>Input: </strong>root[] = [1, 2, 3, 4, N, N, N, 5]
+   <img src="https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700166/Web/Other/blobid2_1739353291.png" alt="" width="301" height="269">
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The height difference between the left and right subtrees at node <code>2</code> is <code>2</code>, which exceeds <code>1</code>. Hence, the tree is not balanced.</span></pre>
+<pre><span style="font-size: 14pt;"><strong>Input: </strong>root[] = [1, 2, N, N, 3]
+&nbsp;&nbsp; <img src="https://media.geeksforgeeks.org/img-practice/prod/addEditProblem/700166/Web/Other/blobid0_1739353287.png" alt="" width="298" height="327">
+<strong>Output: </strong>false
+<strong>Explanation:</strong> The height difference between the left and right subtrees at node <code>1</code> is <code>2</code>, which exceeds <code>1</code>. Hence, the tree is not balanced.</span></pre>
+<p><span style="font-size: 14pt;"><strong>Constraints:</strong><br>0 &lt;= number of nodes &lt;= 5000<br>-<span style="font-size: 18.6667px;">&nbsp;10</span><sup>4</sup> &lt;= node-&gt;data &lt;=&nbsp;</span><span style="font-size: 18.6667px;">10</span><sup>4</sup></p></div><p><span style=font-size:18px><strong>Company Tags : </strong><br><code>Amazon</code>&nbsp;<code>Microsoft</code>&nbsp;<code>Walmart</code>&nbsp;<br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Tree</code>&nbsp;<code>Data Structures</code>&nbsp;
