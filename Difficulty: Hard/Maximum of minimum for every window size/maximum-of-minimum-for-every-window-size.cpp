@@ -5,56 +5,45 @@ using namespace std;
 
 // } Driver Code Ends
 
-class Solution
-{
-    public:
-    //Function to find maximum of minimums of every window size.
-    vector<int> getNSER(int arr[],int n){
-        vector<int>result(n);
-        stack<int>st;
 
-        for(int i=n-1;i>=0;i--){
-            if(st.empty()){
-                result[i]=n;
-            }
-            else{
-                while(!st.empty() && arr[st.top()] > arr[i]){
-                    st.pop();
-                }
-                result[i]=st.empty() ? n : st.top();
-            }
-            st.push(i);
-        }
-        return result;
-    }
-    vector<int> getNSEL(int arr[],int n){
-        vector<int>result(n);
+class Solution {
+  public:
+    int n;
+    vector<int> NSLF(vector<int>&arr){
+        vector<int>v(n);
         stack<int>st;
-
+        st.push(-1);
         for(int i=0;i<n;i++){
-            if(st.empty()){
-                result[i]=-1;
+            while(st.top()!=-1 && arr[st.top()]>=arr[i]){
+                st.pop();
             }
-            else{
-                while(!st.empty() && arr[st.top()] >= arr[i]){   // here we write = because of duplicates
-                    st.pop();
-                }
-                result[i]=st.empty() ? -1 : st.top();
-            }
+            v[i]=st.top();
             st.push(i);
         }
-        return result;
+        return v;
     }
-    vector <int> maxOfMin(int arr[], int N)
-    {
+    vector<int> NSRF(vector<int>&arr){
+        vector<int>v(n);
+        stack<int>st;
+        st.push(n);
+        for(int i=n-1;i>=0;i--){
+            while(st.top()!=n && arr[st.top()]>=arr[i]){
+                st.pop();
+            }
+            v[i]=st.top();
+            st.push(i);
+        }
+        return v;
+    }
+    vector<int> maxOfMins(vector<int>& arr) {
         // Your code here
-        int n=N;
-        vector<int>NSEL=getNSEL(arr,n);
-        vector<int>NSER=getNSER(arr,n);
+        n=arr.size();
+        vector<int>NSL=NSLF(arr);
+        vector<int>NSR=NSRF(arr);
         
         vector<int>ans(n+1);
         for(int i=0;i<n;i++){
-            int len=NSER[i]-NSEL[i]-1;
+            int len=NSR[i]-NSL[i]-1;
             ans[len]=max(ans[len],arr[i]);
         }
         for(int i=n-1;i>=0;i--){
@@ -65,20 +54,27 @@ class Solution
     }
 };
 
+
 //{ Driver Code Starts.
 int main() {
     int t;
     cin >> t;
-
+    cin.ignore();
     while (t--) {
-        int n;
-        cin >> n;
-        int a[n];
-        for (int i = 0; i < n; i++) cin >> a[i];
+        string line;
+        getline(cin, line);
+        stringstream ss(line);
+        vector<int> arr;
+        int num;
+        while (ss >> num) {
+            arr.push_back(num);
+        }
         Solution ob;
-        vector <int> res = ob.maxOfMin(a, n);
-        for (int i : res) cout << i << " ";
+        vector<int> res = ob.maxOfMins(arr);
+        for (int i : res)
+            cout << i << " ";
         cout << endl;
+        cout << "~\n";
     }
     return 0;
 }
