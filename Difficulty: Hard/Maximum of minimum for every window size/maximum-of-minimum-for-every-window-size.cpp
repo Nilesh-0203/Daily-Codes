@@ -40,7 +40,6 @@ class Solution {
         n=arr.size();
         vector<int>NSL=NSLF(arr);
         vector<int>NSR=NSRF(arr);
-        
         vector<int>ans(n+1);
         for(int i=0;i<n;i++){
             int len=NSR[i]-NSL[i]-1;
