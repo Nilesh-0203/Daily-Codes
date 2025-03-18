@@ -1,62 +1,64 @@
 //{ Driver Code Starts
-// Initial Template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
 
-// } Driver Code Ends
-// User function Template for C++
 
-class Solution{
-public:
-    int t[101][1001];
-    int solve(int arr[],int N,int target,int idx){
-        if(idx>=N || target < 0){
-            return 0;
+// } Driver Code Ends
+
+class Solution {
+  public:
+    bool solve(vector<int>&arr,int idx,int currSum,int target,vector<vector<int>>&dp){
+        if(idx>=arr.size()){
+            return false;
         }
-        if(target==0){
-            return 1;
+        if(dp[idx][currSum]!=-1){
+            return dp[idx][currSum];
         }
-        if(t[idx][target]!=-1){
-            return t[idx][target];
+        if(currSum>target){
+            return false;
         }
-        int take=solve(arr,N,target-arr[idx],idx+1);
-        int not_take=solve(arr,N,target,idx+1);
-        return t[idx][target]=take || not_take;
+        if(currSum==target){
+            return true;
+        }
+        int take=solve(arr,idx+1,currSum+arr[idx],target,dp);
+        int not_take=solve(arr,idx+1,currSum,target,dp);
+        
+        return dp[idx][currSum]= take || not_take;
     }
-    int equalPartition(int N, int arr[])
-    {
+    bool equalPartition(vector<int>& arr) {
         // code here
-        memset(t,-1,sizeof(t));
-        int total=0;
-        for(int i=0;i<N;i++){
-            total+=arr[i];
-        }
-        if(total%2==1){
-            return 0;
-        }
-        int target=total/2;
-        return solve(arr,N,target,0);
+        int sum=accumulate(arr.begin(),arr.end(),0);
+        if(sum%2!=0)return false;
+        int n=arr.size();
+        vector<vector<int>>dp(n,vector<int>(sum,-1));
+        return solve(arr,0,0,sum/2,dp);
     }
 };
 
+
 //{ Driver Code Starts.
 
-int main(){
+int main() {
     int t;
-    cin>>t;
-    while(t--){
-        int N;
-        cin>>N;
-        int arr[N];
-        for(int i = 0;i < N;i++)
-            cin>>arr[i];
-        
+    cin >> t;
+    cin.ignore();
+    while (t--) {
+        vector<int> arr;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int number;
+        while (ss >> number) {
+            arr.push_back(number);
+        }
+
         Solution ob;
-        if(ob.equalPartition(N, arr))
-            cout<<"YES\n";
+        if (ob.equalPartition(arr))
+            cout << "true\n";
         else
-            cout<<"NO\n";
+            cout << "false\n";
+        cout << "~" << endl;
     }
     return 0;
 }
