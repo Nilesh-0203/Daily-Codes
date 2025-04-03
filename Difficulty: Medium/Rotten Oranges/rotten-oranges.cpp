@@ -1,12 +1,12 @@
 //{ Driver Code Starts
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
+
 // } Driver Code Ends
-class Solution 
-{
-    public:
-    //Function to find minimum time required to rot all oranges. 
+
+class Solution {
+  public:
     vector<vector<int>>directions{{1,0},{-1,0},{0,1},{0,-1}};
     int orangesRotting(vector<vector<int>>& grid) {
         // Code here
@@ -57,23 +57,27 @@ class Solution
     }
 };
 
+
 //{ Driver Code Starts.
-int main(){
-	int tc;
-	cin >> tc;
-	while(tc--){
-		int n, m;
-		cin >> n >> m;
-		vector<vector<int>>grid(n, vector<int>(m, -1));
-		for(int i = 0; i < n; i++){
-			for(int j = 0; j < m; j++){
-				cin >> grid[i][j];
-			}
-		}
-		Solution obj;
-		int ans = obj.orangesRotting(grid);
-		cout << ans << "\n";
-	}
-	return 0;
+int main() {
+    int tc;
+    cin >> tc;
+    while (tc--) {
+        int n, m;
+        cin >> n >> m;
+        vector<vector<int>> mat(n, vector<int>(m, -1));
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                cin >> mat[i][j];
+            }
+        }
+        Solution obj;
+        int ans = obj.orangesRotting(mat);
+        cout << ans << "\n";
+
+        cout << "~"
+             << "\n";
+    }
+    return 0;
 }
 // } Driver Code Ends
