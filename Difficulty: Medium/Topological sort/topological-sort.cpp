@@ -2,59 +2,66 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 // } Driver Code Ends
-class Solution
-{
-	public:
-	//Function to return list containing vertices in Topological order. 
-	void dfs(int node,vector<int> adj[],vector<bool>&visited,stack<int>&s){
-    visited[node]=true;
-    for(auto neighbor:adj[node]){
-            if(!visited[neighbor]){
-                dfs(neighbor, adj, visited, s);
+
+class Solution {
+  public:
+    vector<int> topoSort(int V, vector<vector<int>>& edges) {
+        // code here
+        unordered_map<int,list<int>>adj;
+        for(int i=0;i<edges.size();i++){
+            int u=edges[i][0];
+            int v=edges[i][1];
+            adj[u].push_back(v);
+        }
+        
+        vector<int>inorder(V,0);
+        for(auto i:adj){
+            for(auto j:i.second){
+                inorder[j]++;
             }
         }
-        s.push(node);
-    }
-	vector<int> topoSort(int V, vector<int> adj[]) 
-	{
-	    // code here
-	   vector<int>ans;
-        vector<bool>visited(V);
-        stack<int>s;
+        
+        queue<int>q;
+        vector<int>ans;
         for(int i=0;i<V;i++){
-            if(!visited[i]){
-                dfs(i,adj,visited,s);
+            if(inorder[i]==0){
+                q.push(i);
             }
         }
-        while(!s.empty()){
-            ans.push_back(s.top());
-            s.pop();
+        
+        while(!q.empty()){
+            int front=q.front();
+            q.pop();
+            ans.push_back(front);
+            for(auto neighbor:adj[front]){
+                inorder[neighbor]--;
+                if(inorder[neighbor]==0){
+                    q.push(neighbor);
+                }
+            }
         }
         return ans;
-    	}
+    }
 };
+
 
 //{ Driver Code Starts.
 
-/*  Function to check if elements returned by user
-*   contains the elements in topological sorted form
-*   V: number of vertices
-*   *res: array containing elements in topological sorted form
-*   adj[]: graph input
-*/
-int check(int V, vector <int> &res, vector<int> adj[]) {
-    
-    if(V!=res.size())
-    return 0;
-    
+int check(int V, vector<int> &res, vector<vector<int>> adj) {
+
+    if (V != res.size())
+        return 0;
+
     vector<int> map(V, -1);
     for (int i = 0; i < V; i++) {
         map[res[i]] = i;
     }
     for (int i = 0; i < V; i++) {
         for (int v : adj[i]) {
-            if (map[i] > map[v]) return 0;
+            if (map[i] > map[v])
+                return 0;
         }
     }
     return 1;
@@ -64,23 +71,30 @@ int main() {
     int T;
     cin >> T;
     while (T--) {
-        int N, E;
-        cin >> E >> N;
-        int u, v;
+        int V, E;
+        cin >> V >> E;
 
-        vector<int> adj[N];
+        vector<vector<int>> adj(V);
+        vector<vector<int>> edges;
 
         for (int i = 0; i < E; i++) {
+            int u, v;
             cin >> u >> v;
             adj[u].push_back(v);
+            edges.push_back({u, v});
         }
-        
-        Solution obj;
-        vector <int> res = obj.topoSort(N, adj);
 
-        cout << check(N, res, adj) << endl;
+        Solution obj;
+        vector<int> res = obj.topoSort(V, edges);
+        bool ans = check(V, res, adj);
+        if (ans)
+            cout << "true\n";
+        else
+            cout << "false\n";
+        cout << "~"
+             << "\n";
     }
-    
+
     return 0;
 }
 // } Driver Code Ends
