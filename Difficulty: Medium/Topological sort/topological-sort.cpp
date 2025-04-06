@@ -7,6 +7,15 @@ using namespace std;
 
 class Solution {
   public:
+    void dfs(unordered_map<int,list<int>>&adj,vector<bool>&visited,int node,stack<int>&s){
+        visited[node]=true;
+        for(auto neighbor:adj[node]){
+            if(!visited[neighbor]){
+                dfs(adj,visited,neighbor,s);
+            }
+        }
+        s.push(node);
+    }
     vector<int> topoSort(int V, vector<vector<int>>& edges) {
         // code here
         unordered_map<int,list<int>>adj;
@@ -15,32 +24,17 @@ class Solution {
             int v=edges[i][1];
             adj[u].push_back(v);
         }
-        
-        vector<int>inorder(V,0);
-        for(auto i:adj){
-            for(auto j:i.second){
-                inorder[j]++;
-            }
-        }
-        
-        queue<int>q;
-        vector<int>ans;
+        stack<int>s;
+        vector<bool>visited(V);
         for(int i=0;i<V;i++){
-            if(inorder[i]==0){
-                q.push(i);
+            if(!visited[i]){
+                dfs(adj,visited,i,s);
             }
         }
-        
-        while(!q.empty()){
-            int front=q.front();
-            q.pop();
-            ans.push_back(front);
-            for(auto neighbor:adj[front]){
-                inorder[neighbor]--;
-                if(inorder[neighbor]==0){
-                    q.push(neighbor);
-                }
-            }
+        vector<int>ans;
+        while(!s.empty()){
+            ans.push_back(s.top());
+            s.pop();
         }
         return ans;
     }
