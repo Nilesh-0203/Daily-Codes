@@ -96,7 +96,7 @@ bool compare(Node* prev, Node* new_node, unordered_set<Node*>& prev_vis,
 
 // } Driver Code Ends
 
-//User function Template for C++
+// User function Template for C++
 
 // struct Node {
 //     int val;
@@ -116,7 +116,7 @@ bool compare(Node* prev, Node* new_node, unordered_set<Node*>& prev_vis,
 // };
 
 class Solution {
-public:
+  public:
     Node* cloneGraph(Node* node) {
         unordered_map<Node*,Node*> vis;
         vis[node]=new Node(node->val);
@@ -142,7 +142,6 @@ public:
         return vis[node];
     }
 };
-
 
 
 
