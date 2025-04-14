@@ -11,6 +11,7 @@
 <strong>Explanation:</strong> merged array = [1,2,3] and median is 2.
 </pre>
 
+
 <p><strong class="example">Example 2:</strong></p>
 
 <pre>
