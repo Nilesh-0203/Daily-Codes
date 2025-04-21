@@ -29,7 +29,7 @@ class Solution {
     int knapsack(int W, vector<int> &val, vector<int> &wt) {
         // code here
         n=val.size();
-        vector<vector<int>>dp(n+1,vector<int>(W+1,-1));
+        vector<vector<int>>dp(n,vector<int>(W+1,-1));
         return solve(W,val,wt,0,dp);
     }
 };
