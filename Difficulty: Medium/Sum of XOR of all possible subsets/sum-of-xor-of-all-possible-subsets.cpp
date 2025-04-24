@@ -17,6 +17,7 @@ class Solution {
         }
         return result<<(n-1);
     }
+
 };
 
 
