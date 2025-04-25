@@ -13,17 +13,17 @@ class Solution {
   public:
     int majorityElement(vector<int>& arr) {
         // code here
-        unordered_map<int,int>mp;
         int n=arr.size();
-    	for(int i=0;i<n;i++){
-    		mp[arr[i]]++;
-    	}
-    	for(auto i:mp){
-    		if(i.second>(n/2)){
-    			return i.first;
-    		}
-    	}
-    	return -1;
+        unordered_map<int,int>mp;
+        for(int a:arr){
+            mp[a]++;
+        }
+        for(auto i:mp){
+            if(i.second > (n/2)){
+                return i.first;
+            }
+        }
+        return -1;
     }
 };
 
