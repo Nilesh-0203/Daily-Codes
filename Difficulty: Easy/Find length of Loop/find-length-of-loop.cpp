@@ -12,14 +12,6 @@ struct Node {
     }
 };
 
-void printList(Node *node) {
-    while (node != NULL) {
-        cout << node->data << " ";
-        node = node->next;
-    }
-    cout << "\n";
-}
-
 void loopHere(Node *head, Node *tail, int position) {
     if (position == 0)
         return;
@@ -32,8 +24,8 @@ void loopHere(Node *head, Node *tail, int position) {
 
 
 // } Driver Code Ends
-/*
 
+/*
 struct Node {
     int data;
     struct Node *next;
@@ -47,60 +39,30 @@ struct Node {
 class Solution {
   public:
     // Function to find the length of a loop in the linked list.
-    Node* floydDetectionLoop(Node* head){
-        if(head==NULL){
-            return NULL;
-        }
-    
-        Node* slow=head;
-        Node* fast=head;
-        while(slow!=NULL && fast!=NULL){
-            fast=fast->next;
-            if(fast!=NULL){
-                fast=fast->next;
-            }
-            slow=slow->next;
-            if(slow==fast){
-                return slow;
-            }
-        }
-        return NULL;
-    }
-    
-    Node* getStartingNode(Node* head){
-        if(head==NULL){
-            return NULL;
-        }
-    
-        Node* intersection=floydDetectionLoop(head);
-        if(intersection==NULL){
-            return NULL;
-        }
-        Node* slow=head;
-        while(slow!=intersection){
-            slow=slow->next;
-            intersection=intersection->next;
-        }
-        return slow;
-    }
     int countNodesinLoop(Node *head) {
         // Code here
-        if (head == NULL) {
-          return 0;
+        Node* slow=head;
+        Node* fast=head;
+        while(fast->next!=NULL){
+            slow=slow->next;
+            fast=fast->next;
+            if(fast->next){
+                fast=fast->next;
+            }
+            if(slow==fast){
+                int len=0;
+                Node* temp=slow->next;
+                while(temp!=slow){
+                    temp=temp->next;
+                    len++;
+                }
+                return len+1;
+            }
         }
-        Node* startOfLoop=getStartingNode(head);
-        if(startOfLoop==NULL){
-            return 0;
-        }
-        Node* temp=startOfLoop;
-        int cnt=1;
-        while(temp->next!=startOfLoop){
-            cnt++;
-            temp=temp->next;
-        }
-        return cnt;
+        return 0;
     }
 };
+
 
 //{ Driver Code Starts.
 
@@ -130,6 +92,7 @@ int main() {
 
         Solution ob;
         cout << ob.countNodesinLoop(head) << endl;
+        cout << "~" << endl;
     }
     return 0;
 }
