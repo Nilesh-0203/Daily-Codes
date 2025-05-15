@@ -150,6 +150,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0118-pascals-triangle](https://github.com/Nilesh-0203/Daily-Codes/tree/master/0118-pascals-triangle) |
+| https://www.interviewbit.com/problems/length-of-longest-subsequence/|
 # Graph
 |  |
 | ------- |
