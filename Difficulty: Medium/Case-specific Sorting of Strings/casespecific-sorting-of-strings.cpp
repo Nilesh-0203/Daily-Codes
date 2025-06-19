@@ -1,6 +1,6 @@
 class Solution {
   public:
-     string caseSort(string& s) {
+    string caseSort(string& s) {
         // code here
         vector<int>u(26,0);
         vector<int>l(26,0);
