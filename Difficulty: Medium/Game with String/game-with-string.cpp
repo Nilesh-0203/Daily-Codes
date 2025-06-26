@@ -1,8 +1,5 @@
-//User function Template for C++
-
-class Solution{
-public:
-    
+class Solution {
+  public:
     int minValue(string s, int k){
         // code here
         priority_queue<int>maxHeap;
