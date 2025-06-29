@@ -20,6 +20,9 @@ class Solution {
          
    }
   
+   
+  
+  
     int splitArray(vector<int>& arr, int k) {
            
            // 1 3 6 10 
