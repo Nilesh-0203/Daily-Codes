@@ -15,7 +15,7 @@ public:
 
 class Solution {
   public:
-     unordered_map<int, int> postIndex;
+    unordered_map<int, int> postIndex;
     int preIndex = 0;
 
     Node* build(vector<int>& pre, vector<int>& post, int start, int end) {
