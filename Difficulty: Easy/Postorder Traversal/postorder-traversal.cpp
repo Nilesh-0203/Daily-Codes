@@ -14,20 +14,17 @@ class Node {
 */
 
 class Solution {
-  public:
-    void solve(Node* root,vector<int>&v){
-    if(root==NULL){
-      return ;
+  void post(Node* root, vector<int>& ans){
+        if (!root) return;
+        post(root->left, ans);
+        post(root->right, ans);
+        ans.push_back(root->data);
     }
-   solve(root->left,v);
-   solve(root->right,v);
-   v.push_back(root->data);
-}
-vector <int> postOrder(Node* root)
-{
-  // Your code here
-         vector<int>v;
-         solve(root,v);
-         return v;
-}
+  public:
+    vector<int> postOrder(Node* root) {
+        // code here
+        vector<int> ans;
+        post(root, ans);
+        return ans;
+    }
 };
