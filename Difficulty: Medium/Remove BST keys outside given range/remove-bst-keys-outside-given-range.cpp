@@ -31,5 +31,4 @@ class Solution {
         // code here
         return solve(root,l,r);
     }
-    
 };
