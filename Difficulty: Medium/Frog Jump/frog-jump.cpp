@@ -1,6 +1,6 @@
 class Solution {
   public:
-     int minCost(vector<int>& height) {
+    int minCost(vector<int>& height) {
         vector<int> dp(height.size(), 0);
         
         for(int i = height.size()-2;i>=0;i--){
