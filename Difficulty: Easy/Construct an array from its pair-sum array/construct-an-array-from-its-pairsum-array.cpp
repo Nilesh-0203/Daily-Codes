@@ -1,6 +1,6 @@
 class Solution {
   public:
-      vector<int> constructArr(vector<int>& arr) {
+    vector<int> constructArr(vector<int>& arr) {
         int m=arr.size();
         int n=( 1 + sqrt(1+8*m) )/2;
         vector<int>ans(n);
