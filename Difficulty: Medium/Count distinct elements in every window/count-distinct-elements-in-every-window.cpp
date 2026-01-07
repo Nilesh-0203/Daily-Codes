@@ -2,7 +2,7 @@ class Solution {
   public:
     vector<int> countDistinct(vector<int> &arr, int k) {
         // code here
-        int n = arr.size();
+         int n = arr.size();
         unordered_map<int, int> freq;
         vector<int> ans;
         
