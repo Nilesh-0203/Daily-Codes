@@ -1,6 +1,6 @@
 class Solution {
   public:
-     vector<int> calculateSpan(vector<int>& arr) {
+    vector<int> calculateSpan(vector<int>& arr) {
         vector<int> res(arr.size());
         stack<int> st;
         for(int i = 0;i<arr.size();i++)
