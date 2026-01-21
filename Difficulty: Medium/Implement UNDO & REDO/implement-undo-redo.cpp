@@ -1,6 +1,6 @@
 class Solution {
   public:
-    string current="";
+      string current="";
   string past="";
     void append(char x) {
         // append x into document
