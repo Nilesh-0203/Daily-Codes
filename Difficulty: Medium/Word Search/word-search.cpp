@@ -1,73 +1,39 @@
-//{ Driver Code Starts
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
 class Solution {
-  public:
-    int m,n;
-    vector<vector<int>>directions{{0,1},{0,-1},{1,0},{-1,0}};
-    bool find(vector<vector<char>>&mat,int i,int j,int idx,string& word){
-        if(idx==word.length()){
-            return true;
+  vector<pair<int,int>>dir={{1,0},{-1,0},{0,-1},{0,1}};
+    bool dfs(vector<vector<char>> &mat,string &word,vector<vector<bool>> &visited,int r,int c, int ptr){
+        if(r<0 or c<0 or r>=mat.size() or c>=mat[0].size() or mat[r][c]!=word[ptr] or visited[r][c])return false;
+        //what if all leters of the word is matched
+        if(ptr==word.length()-1)return true;
+        
+        //now mark it and run the dfs
+        
+        visited[r][c]=true;
+        for(auto it:dir){
+            if(dfs(mat,word,visited,r+it.first,c+it.second,ptr+1))return true;
         }
-        if(i<0 || j<0 || i>=m || j>=n || mat[i][j]=='$'){
-            return false;
-        }
-        if(mat[i][j]!=word[idx]){
-            return false;
-        }
-        char temp=mat[i][j];
-        mat[i][j]='$';
-        for(auto dir:directions){
-            int new_i=i+dir[0];
-            int new_j=j+dir[1];
-            if(find(mat,new_i,new_j,idx+1,word)){
-                return true;
-            }
-        }
-        mat[i][j]=temp;
-        return false;
+        
+        visited[r][c]=false;//back track
+        return false;//other wise 
+        
     }
-    bool isWordExist(vector<vector<char>>& mat, string& word) {
+  public:
+    bool isWordExist(vector<vector<char>> &mat, string &word) {
         // Code here
-        m=mat.size();
-        n=mat[0].size();
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                if(mat[i][j]==word[0] && find(mat,i,j,0,word)){
-                    return true;
+        /*
+        its a clear dfs approach 
+        first find the first match then go all four direction matching next letter of word
+        and make sure to unmark the letter after the dfs call
+        */
+        vector<vector<bool>>visited(mat.size(),vector<bool>(mat[0].size(),false));
+        
+        for(int i=0;i<mat.size();i++){
+            for(int j=0;j<mat[0].size();j++){
+                if(mat[i][j]==word[0]){
+                    bool ans=dfs(mat,word,visited,i,j,0);
+                    if(ans)return ans;
                 }
             }
         }
         return false;
     }
 };
-
-//{ Driver Code Starts.
-int main() {
-    int tc;
-    cin >> tc;
-    while (tc--) {
-        int n, m;
-        cin >> n >> m;
-        vector<vector<char>> mat(n, vector<char>(m, '*'));
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < m; j++)
-                cin >> mat[i][j];
-        string word;
-        cin >> word;
-        Solution obj;
-        bool ans = obj.isWordExist(mat, word);
-        if (ans)
-            cout << "true\n";
-        else
-            cout << "false\n";
-
-        cout << "~"
-             << "\n";
-    }
-    return 0;
-}
-// } Driver Code Ends
