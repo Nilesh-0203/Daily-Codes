@@ -1,33 +1,28 @@
 class Solution {
   public:
-    int kadans_max(vector<int> &arr,int num){
-        int sum=arr[0];
-        int maxSum=arr[0];
-        for(int i=1;i<num;i++){
-            sum=max(sum+arr[i],arr[i]);
-            maxSum=max(maxSum,sum);
-        }
-        return maxSum;
-    }
-    int kadans_min(vector<int> &arr,int num){
-        int sum=arr[0];
-        int minSum=arr[0];
-        for(int i=1;i<num;i++){
-            sum=min(sum+arr[i],arr[i]);
-            minSum=min(minSum,sum);
-        }
-        return minSum;
-    }
-
     int maxCircularSum(vector<int> &arr) {
         // code here
-        int num=arr.size();
-        int total=accumulate(arr.begin(),arr.end(),0);
-        int maxSum=kadans_max(arr,num);
-        int minSum=kadans_min(arr,num);
-        if(maxSum>0){
-            return max(maxSum,total-minSum);
+         int mx_curr = 0, mxsum = -1e9;
+        int mn_curr = 0, mnsum = 1e9;
+        int n = arr.size(), total = 0;
+        for(int i=0; i<n; i++){
+            total += arr[i];
+            mx_curr += arr[i];
+            mn_curr += arr[i];
+            mxsum = max(mxsum, mx_curr);
+            mnsum = min(mnsum, mn_curr);
+            if(mx_curr < 0){
+                mx_curr = 0;
+            }
+            if(mn_curr > 0){
+                mn_curr = 0;
+            }
         }
-        return maxSum;
+        
+        if(total == mnsum){
+            return mxsum;
+        }
+        
+        return max(mxsum, total-mnsum);
     }
 };
