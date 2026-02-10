@@ -1,63 +1,39 @@
-//{ Driver Code Starts
-#include <bits/stdc++.h>
-using namespace std;
-
-// } Driver Code Ends
 class Solution {
   public:
-    int find(int n,vector<int>&arr){
-    	long long sum=0;
-    	for(int i=0;i<arr.size();i++){
-    		if(arr[i]%n!=0){
-    			sum+=(arr[i]/n)+1;
-    		}
-    		else{
-    			sum+=arr[i]/n;
-    		}
-    	}
-    	return sum;
-    }
+    int n;
 
-    int Solve(int N, vector<int>& piles, int H) {
+    int check(int t, vector<int>&arr){{
+      int x=0;
+
+      for(int i=0; i<n; i++){
+        if((arr[i]%t)==0){
+            x+=(arr[i]/t);
+        }else x+=((arr[i]+t)/t);
+      }
+
+      return x;
+    }}
+
+    int kokoEat(vector<int>& arr, int k) {
         // Code here
-        sort(piles.begin(),piles.end());
-    	long long i=1,j=*max_element(piles.begin(),piles.end());
-    	int ans=0;
-    	while(i<j){
-    		long long mid=i+(j-i)/2;
-    		int x=find(mid,piles);
-    		if(x<=H){
-    			j=mid;
-    		}
-    		else if(x>H){
-    			i=mid+1;
-    		}
-    	}
-    	return i;
-        
+        n=arr.size();
+
+        int lo=1, hi=0;
+
+        for(int i=0; i<n; i++){
+          hi=max(hi, arr[i]);
+        }
+
+        int ans=hi;
+
+        while(lo<=hi){
+          int mid=lo+(hi-lo)/2;
+          if(check(mid, arr)<=k){
+            ans=mid;
+            hi=mid-1;
+          }else lo=mid+1;
+        }
+
+        return ans;
     }
 };
-
-//{ Driver Code Starts.
-int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        vector<int> a;
-        for (int i = 0; i < n; ++i) {
-            int x;
-            cin >> x;
-            a.push_back(x);
-        }
-        int h;
-        cin >> h;
-        Solution obj;
-
-        cout << obj.Solve(n, a, h);
-        cout << "\n";
-    }
-    return 0;
-}
-// } Driver Code Ends
