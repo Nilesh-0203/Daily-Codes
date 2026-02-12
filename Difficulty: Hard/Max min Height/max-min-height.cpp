@@ -1,6 +1,6 @@
 class Solution {
   public:
-     bool isPossible(vector<int>& arr, int k, int w, int target) {
+    bool isPossible(vector<int>& arr, int k, int w, int target) {
         int n = arr.size();
         vector<int> diff(n + 2, 0);
         long long operations = 0, curr_add = 0;
