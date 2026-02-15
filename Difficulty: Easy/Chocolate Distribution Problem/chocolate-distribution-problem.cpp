@@ -2,7 +2,7 @@ class Solution {
   public:
     int findMinDiff(vector<int>& a, int m) {
         // code here
-         int n = a.size();
+        int n = a.size();
         sort(a.begin() , a.end());
         int j = 0;
         int mini = INT_MAX;
