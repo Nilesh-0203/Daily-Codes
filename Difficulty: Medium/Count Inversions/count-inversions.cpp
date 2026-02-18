@@ -1,54 +1,49 @@
-//{ Driver Code Starts
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
-
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
-using namespace __gnu_pbds;
-template <class T = int32_t>
-using mset = tree<T, null_type, less_equal<T>, rb_tree_tag,
-                  tree_order_statistics_node_update>;
 class Solution {
   public:
-    // Function to count inversions in the array.
-    int inversionCount(vector<int> &arr)
+    int Merge(vector<int> &arr, int l, int m, int r)
     {
-        mset<int> st;
-        int inversions = 0;
-        for (int i = arr.size() - 1; i >= 0; i--)
-        {
-            inversions += st.order_of_key(arr[i]);
-            st.insert(arr[i]);
+        vector<int> merged(r-l+1);
+        int i = l, j = m+1, k = 0, cnt = 0;
+        while(i<m+1 and j<r+1){
+            if(arr[i]>arr[j]){
+                merged[k] = arr[j];
+                cnt+=(m-i+1);
+                j++;
+            }
+            else{
+                merged[k] = arr[i];
+                i++;
+            }
+            k++;
         }
-        return inversions;
+        while(i<m+1){
+            merged[k] = arr[i];
+            i++;
+            k++;
+        }
+        while(j<r+1){
+            merged[k] = arr[j];
+            j++;
+            k++;
+        }
+        
+        for(int i = 0;i<(r-l+1);i++)
+        {
+            arr[l+i] = merged[i];
+        }
+        return cnt;
+    }
+    int MergeSort(vector<int> &arr, int l, int r){
+        if(l>=r)return 0;
+        int m = l + (r-l)/2;
+        int lc = MergeSort(arr, l, m);
+        int rc = MergeSort(arr, m+1, r);
+        
+        int mc = Merge(arr, l, m, r);
+        
+        return lc+rc+mc;
+    }
+    int inversionCount(vector<int> &arr) {
+        return MergeSort(arr, 0, arr.size()-1);
     }
 };
-
-//{ Driver Code Starts.
-
-int main() {
-
-    int T;
-    cin >> T;
-    cin.ignore();
-    while (T--) {
-        int n;
-        vector<int> a;
-        string input;
-        getline(cin, input);
-        stringstream ss(input);
-        int num;
-        while (ss >> num)
-            a.push_back(num);
-        Solution obj;
-        cout << obj.inversionCount(a) << endl;
-        cout << "~" << endl;
-    }
-
-    return 0;
-}
-
-// } Driver Code Ends
