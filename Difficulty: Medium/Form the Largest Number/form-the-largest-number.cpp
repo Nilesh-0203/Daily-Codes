@@ -2,7 +2,7 @@ class Solution {
   public:
     string findLargest(vector<int> &arr) {
         // code here
-          vector<string> temp;
+           vector<string> temp;
         for(int& num : arr){
             temp.push_back(to_string(num));
         }
