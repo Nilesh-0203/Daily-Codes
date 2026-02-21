@@ -1,17 +1,23 @@
 class Solution {
   public:
-    int hIndex(vector<int>& citations) {
+     bool check(vector<int>&arr,int value){
+        int cnt=0;
+        for(int i:arr){
+            if(i>=value)cnt++;
+        }
+        return cnt>=value;
+    }
+    int hIndex(vector<int>& arr) {
         // code here
-        int n = citations.size();
-        vector<int> citarr(n+1,0);
-        for(int i:citations){
-            citarr[ min(i,n) ]++;
+        int low=0,high=*max_element(arr.begin(),arr.end());
+        int ans=-1;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(check(arr,mid)){
+                ans=mid;
+                low=mid+1;
+            } else high=mid-1;
         }
-        int citres = 0;
-        for(int hidx = n;hidx>=0;hidx--){
-            citres += citarr[hidx];
-            if(citres >= hidx) return hidx;
-        }
-        return 0;
+        return ans;
     }
 };
