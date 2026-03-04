@@ -1,24 +1,15 @@
 class Solution {
   public:
-    int maxSubarrayXOR(vector<int>& arr, int k) {
-        // code here
-        int n = arr.size();
-        int maxXor = INT_MIN;
-        int currentXor = arr[0];
-        
-        int l = 0, r = 1;
-        while(l<=n-k){
-            if(r-l+1 > k){
-                maxXor = max(maxXor, currentXor);
-                currentXor ^= arr[l];
-                l++;
-            }
-            currentXor ^= arr[r];
-            r+=1;
+      int maxSubarrayXOR(vector<int>& arr, int k) {
+        int n = arr.size(),x=0,maxi;
+        for(int i=0;i<k;++i){
+            x^=arr[i];
         }
-        if(maxXor == INT_MIN){
-            return currentXor;
+        maxi=x;
+        for(int i=k;i<n;++i){
+            x^=arr[i]^arr[i-k];
+            if(x>maxi) maxi=x;
         }
-        return maxXor;
+        return maxi;
     }
 };
