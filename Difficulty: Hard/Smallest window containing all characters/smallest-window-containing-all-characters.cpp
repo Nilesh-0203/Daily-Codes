@@ -1,6 +1,6 @@
 class Solution {
   public:
-    string smallestWindow(string &s, string &t) {
+    string minWindow(string &s, string &t) {
         // code here
         if (s.length() < t.length()) return "";
         
