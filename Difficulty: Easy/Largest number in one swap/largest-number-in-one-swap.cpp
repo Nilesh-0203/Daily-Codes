@@ -2,7 +2,7 @@ class Solution {
   public:
     string largestSwap(string &s) {
         // code here
-         vector<int>v(10,-1);
+        vector<int>v(10,-1);
         for(int i=0;i<s.length();i++){
             v[s[i]-'0']=i;
         }
