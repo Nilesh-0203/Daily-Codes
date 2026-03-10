@@ -2,7 +2,7 @@ class Solution {
   public:
     int countSubarrays(vector<int> &arr) {
         // code here
-         int n = arr.size();
+        int n = arr.size();
         long long count = 0;
         stack<int> st;
         
