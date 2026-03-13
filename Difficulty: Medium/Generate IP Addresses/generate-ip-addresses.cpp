@@ -1,14 +1,5 @@
-//{ Driver Code Starts
-#include <bits/stdc++.h>
-
-using namespace std;
-
-
-// } Driver Code Ends
-/*complete the Function*/
-
 class Solution {
-    public:
+  public:
     vector<string>ans;
     int n;
     bool isValid(string temp){
@@ -41,30 +32,3 @@ class Solution {
         return ans;
     }
 };
-
-//{ Driver Code Starts.
-
-int main() {
-    int T;
-    cin >> T;
-    while (T--) {
-        string s;
-        cin >> s;
-
-        /*generating naively*/
-        Solution obj;
-        vector<string> str = obj.generateIp(s);
-        sort(str.begin(), str.end());
-        if (str.size() == 0)
-            cout << -1 << "\n";
-        else {
-            for (auto &u : str) {
-                cout << u << "\n";
-            }
-        }
-
-        cout << "~"
-             << "\n";
-    }
-}
-// } Driver Code Ends
