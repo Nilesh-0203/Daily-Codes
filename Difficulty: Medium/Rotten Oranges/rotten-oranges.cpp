@@ -1,6 +1,6 @@
 class Solution {
   public:
-  vector<vector<int>>directions{{1,0},{-1,0},{0,1},{0,-1}};
+    vector<vector<int>>directions{{1,0},{-1,0},{0,1},{0,-1}};
     int orangesRot(vector<vector<int>>& grid) {
         // Code here
         int m=grid.size();
