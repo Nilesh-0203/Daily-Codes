@@ -1,6 +1,6 @@
 class Solution {
   public:
-        int maxProfit(vector<int>& arr, int k) {
+    int maxProfit(vector<int>& arr, int k) {
         // Code here
         int n=arr.size();
         int previousBuyState=0-arr[0];
