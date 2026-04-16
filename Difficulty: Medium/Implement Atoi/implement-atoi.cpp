@@ -1,6 +1,6 @@
 class Solution {
   public:
-     int myAtoi(string &s) {
+    int myAtoi(string &s) {
         // code here
         int sign = 1, r = 0, i = 0;
         while(s[i] == ' ')      i++;        // ignore whitespaces
