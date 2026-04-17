@@ -1,6 +1,6 @@
 class Solution {
   public:
-    bool canFormPalindrome(string &s) {
+     bool canFormPalindrome(string &s) {
         int track = 0;
         for(char c: s){
             track = track^(1<<(c-'a'));
