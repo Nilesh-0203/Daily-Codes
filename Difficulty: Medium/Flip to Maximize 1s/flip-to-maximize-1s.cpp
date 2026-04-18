@@ -1,6 +1,6 @@
 class Solution {
   public:
-     int maxOnes(vector<int>& arr) {
+    int maxOnes(vector<int>& arr) {
         // code here
         int n = arr.size();
         int c =0 , s =0;
