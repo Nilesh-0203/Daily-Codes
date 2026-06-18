@@ -1,64 +1,50 @@
-//{ Driver Code Starts
-
-
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
-
-
 class Solution {
   public:
-    int n,m;
-    int find(vector<vector<int>>&matrix,int i,int j){
-        int cnt=0;
-        if(i-1 >=0 && matrix[i-1][j]==1){
-            cnt++;
-        }
-        if(i+1<n && matrix[i+1][j]==1){
-            cnt++;
-        }
-        if(j-1>=0 && matrix[i][j-1]==1){
-            cnt++;
-        }
-        if(j+1<m && matrix[i][j+1]==1){
-            cnt++;
-        }
-        return cnt;
-    }
-    int findCoverage(vector<vector<int>>& matrix) {
-        // Code here
-        n=matrix.size();
-        m=matrix[0].size();
-        int count=0;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(matrix[i][j]==0){
-                    count+=find(matrix,i,j);
+    int findCoverage(vector<vector<int>>& mat) {
+        // code here
+        int n = mat.size();
+        int m = mat[0].size();
+        int ans = 0;
+        for(int i=0;i<n;++i){
+            for(int j=0;j<m;++j){
+                if(mat[i][j] == 1){
+                    for(int k = j+1;k<m;++k){
+                        if(mat[i][k] == 0) ans++;
+                    }
+                    break;
                 }
             }
+            // cout<<ans<<" ";
+            for(int j=m-1;j>=0;--j){
+                if(mat[i][j] == 1){
+                    for(int k = j-1;k>=0;--k){
+                        if(mat[i][k] == 0) ans++;
+                    }
+                    break;
+                }
+            }
+            // cout<<ans<<" ";
         }
-        return count;
+        for(int j=0;j<m;++j){
+            for(int i=0;i<n;++i){
+                if(mat[i][j] == 1){
+                    for(int k = i+1;k<n;++k){
+                        if(mat[k][j] == 0) ans++;
+                    }
+                    break;
+                }
+            }
+            // cout<<ans<<" ";
+            for(int i=n-1;i>=0;--i){
+                if(mat[i][j] == 1){
+                    for(int k = i-1;k>=0;--k){
+                        if(mat[k][j] == 0) ans++;
+                    }
+                    break;
+                }
+            }
+            // cout<<ans<<" ";
+        }
+        return ans;
     }
 };
-
-
-//{ Driver Code Starts.
-int main() {
-    int tc;
-    cin >> tc;
-    while (tc--) {
-        int n, m;
-        cin >> n >> m;
-        vector<vector<int>> matrix(n, vector<int>(m, 0));
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < m; j++)
-                cin >> matrix[i][j];
-        Solution obj;
-        int ans = obj.findCoverage(matrix);
-        cout << ans << "\n";
-    }
-    return 0;
-}
-// } Driver Code Ends
