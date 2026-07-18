@@ -1,6 +1,6 @@
 class Solution {
   public:
-     int findWays(vector<vector<int>>& matrix, int k) {
+    int findWays(vector<vector<int>>& matrix, int k) {
 
         const int MOD = 1000000007;
 
